@@ -16,17 +16,20 @@ public class myClient {
         //port MUST be the same on this and server side
         Socket clientSocket = new Socket ("hostname", 25000);
         //outToSerer is the output that will be sent to the server
-        //inFromStream is the input that will be received from the server via the process
+        //inFromServer is the input that will be received from the server via the process
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
-        BufferedReader inFromStream =
+        BufferedReader inFromServer =
                 new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         //makes sentence equal to the input from the user
         sentence = inFromUser.readLine();
-        //
+        //sends sentence to the client side of the tcp and awaits response
         outToServer.writeBytes(sentence + '\n');
+        //modified sentence becomes whatever is read from the stream
+        modifiedSentence = inFromServer.readLine();
+        //prints the modifiedSentence and thus what was read from the server
+        System.out.println("From server: " + modiifiedSentence);
+        //closes the socket
+        clientSocket.close();
 
-
-        System.out.println("Hello World!");
-        System.out.println("Once More");
     }
 }
