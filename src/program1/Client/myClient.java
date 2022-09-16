@@ -8,13 +8,13 @@ public class myClient {
         //user input
         String sentence;
         //computer modified user input
-        String modiifiedSentence;
+        String modifiedSentence;
         //reader in order to take input from user
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
         //this creates the socket by which the tcp connection will be initiated
         //hostname must be replaced before connecting
         //port MUST be the same on this and server side
-        Socket clientSocket = new Socket ("localhost", 25000);
+        Socket clientSocket = new Socket ("localhost",25000);
         //outToSerer is the output that will be sent to the server
         //inFromServer is the input that will be received from the server via the process
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
@@ -27,7 +27,7 @@ public class myClient {
         //modified sentence becomes whatever is read from the stream
         modifiedSentence = inFromServer.readLine();
         //prints the modifiedSentence and thus what was read from the server
-        System.out.println("From server: " + modiifiedSentence);
+        System.out.println("From server: " + modifiedSentence);
         //closes the socket
         clientSocket.close();
 
