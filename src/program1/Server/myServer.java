@@ -14,5 +14,13 @@ class myServer {
             Socket s = ss.accept();
             //prints that the client connected
             System.out.println("client connected");
+
+            //print writer to send data to the client
+            PrintWriter pw = new PrintWriter(s.getOutputStream());
+            //prints a phrase to client
+            pw.println("Hello Client!");
+            System.out.println("Msg sent");
+            //flushes the print writer to be safe
+            pw.flush();
     }
 }
