@@ -12,7 +12,7 @@ public class myClient {
         //file writer to write what was received from the server into the client file
         FileWriter fw = new FileWriter("client_file.txt");
         //file writer to write to overall status file
-        FileWriter statusWrite = new FileWriter("status.txt");
+        FileWriter statusWrite = new FileWriter("program1/status.txt");
 
         //this is the socket that will connect to the server
         Socket s = new Socket("localhost", portNum);

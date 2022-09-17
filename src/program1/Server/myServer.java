@@ -31,11 +31,9 @@ class myServer {
                 String tmpData = scan.nextLine();
                 //writes whatever was read into the log for documentation
                 logWrite.write(tmpData);
-                //concats the read data onto data so that it can be sent to the client
-                data.concat(tmpData);
+                //prints lines to client 1 line at a time
+                pw.println(tmpData);
             }
-            //prints a phrase to client
-            pw.println(data);
             logWrite.write("Message sent to client. \n");
             statusWrite.write("Message sent to client. \n");
             //closes statusWrite as it is no longer needed
