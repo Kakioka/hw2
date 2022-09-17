@@ -15,7 +15,7 @@ class myServer {
             //file writer to write to the overall status.txt file
             FileWriter statusWrite = new FileWriter("program1/status.txt");
             //file obj declaration for scanning
-            File msg = new File("program1/Server/server_file.txt");
+            File msg = new File("../server_file.txt");
             //sets up a server socket at the port number
             ServerSocket ss = new ServerSocket(portNum);
             logWrite.write("Server Socket set up. \n");
