@@ -1,0 +1,7 @@
+Both sides work. However, when running the program, make sure to run it from the home directory and 
+to specify the package. 
+For client: java program1.Client.myClient 25000
+For server: java program1.Server.myServer 2500
+I'm not sure if this is normal, but it took me days to figure it out.
+P.S. I also have the program write some general status messages that apply to both sides here.
+########

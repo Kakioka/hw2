@@ -1,3 +1,20 @@
+/**
+ * NAME     :KULIAKAIWIKUAMOO (KAIWI) AKIOKA
+ *
+ * HOMEWORK     : 1
+ *
+ * CLASS        : ICS 451
+ *
+ * INSTRUCTOR       : RAVI NARAYAN
+ *
+ * DATE         : 9/16/2022
+ *
+ * FILE         : myServer.java
+ *
+ * DESCRIPTION      : This file contains the server side of homework 1.
+ *
+ */
+
 package program1.Client;
 import java.io.*;
 import java.net.*;
@@ -15,11 +32,11 @@ public class myClient {
         FileWriter statusWrite = new FileWriter("program1/status.txt");
 
         //this is the socket that will connect to the server
-        Socket s = new Socket("localhost", portNum);
+        Socket socket = new Socket("localhost", portNum);
         logWrite.write("Client attempted connection. \n");
 
         //object from the client socket to read data from the server
-        InputStream input = s.getInputStream();
+        InputStream input = socket.getInputStream();
         logWrite.write("Connection was successful. \n");
         statusWrite.write("Connected on client side. \n");
 
