@@ -8,9 +8,9 @@ public class myClient {
         //once again assuming that an int and port number is passed in as the first arg
         int portNum = Integer.parseInt(args[0]);
         //file writer for the client log
-        FileWriter logWrite = new FileWriter("client_log.txt");
+        FileWriter logWrite = new FileWriter("program1/Client/client_log.txt");
         //file writer to write what was received from the server into the client file
-        FileWriter fw = new FileWriter("client_file.txt");
+        FileWriter fw = new FileWriter("program1/Client/client_file.txt");
         //file writer to write to overall status file
         FileWriter statusWrite = new FileWriter("program1/status.txt");
 
