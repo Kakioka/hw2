@@ -3,20 +3,16 @@ import java.io.*;
 import java.net.*;
 
 class myServer {
-    public static void main (String args[]) throws Exception{
-        String clientSentence;
-        String capitalizedSentence;
-        //creates the server side welcome socket that will accept the communication from the client socket
-        ServerSocket welcomeSocket = new ServerSocket (25000);
-        while (true){
-            //this is the actual 3-way handshake
-            Socket connectionSocket = welcomeSocket.accept();
-            BufferedReader inFromClient =
-                    new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
-            DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
-            clientSentence = inFromClient.readLine();
-            capitalizedSentence = clientSentence.toUpperCase() + '\n';
-            outToClient.writeBytes(capitalizedSentence);
-        }
+    public static void main (String[] args) throws Exception{
+
+            //sets a variable equal to the first arg passed in as that should be a port number
+            int portNum = Integer.parseInt(args[0]);
+
+            //sets up a server socket at the port number
+            ServerSocket ss = new ServerSocket(portNum);
+            //accepts the connection from the client
+            Socket s = ss.accept();
+            //prints that the client connected
+            System.out.println("client connected");
     }
 }
