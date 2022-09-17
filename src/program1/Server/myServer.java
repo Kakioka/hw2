@@ -14,6 +14,8 @@ class myServer {
             FileWriter logWrite = new FileWriter("program1/Server/server_log.txt");
             //file writer to write to the overall status.txt file
             FileWriter statusWrite = new FileWriter("program1/status.txt");
+            //file obj declaration for scanning
+            File msg = new File("program1/Server/server_file.txt");
             //sets up a server socket at the port number
             ServerSocket ss = new ServerSocket(portNum);
             logWrite.write("Server Socket set up. \n");
@@ -24,7 +26,7 @@ class myServer {
             //print writer to send data to the client
             PrintWriter pw = new PrintWriter(s.getOutputStream());
             //scanner to read from server_file.txt
-            Scanner scan = new Scanner("program1/Server/server_file.txt");
+            Scanner scan = new Scanner(msg);
             //reads the file as long as there is a next line
             while (scan.hasNextLine()){
                 //writes that data into a string called data to be sent
